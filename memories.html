@@ -76,7 +76,7 @@
 
 <!-- Background Music -->
 <audio id="bgMusic" loop>
-    <source src="static/music/bg.mp3" type="audio/mpeg">
+    <source src="bg.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
@@ -88,7 +88,8 @@
             What started as an online conversation slowly became something I never expected.
             From texts to voice calls, from video calls to late-night talks —
             those moments quietly turned into the most important part of my life.
-            Somewhere along the way, <b>you became my everyday.</b>
+            The laughs, the fights, the kisses, the conversations that never felt enough…
+            somewhere along the way, <b>you became my everyday.</b>
         </p>
     </div>
 
@@ -96,17 +97,31 @@
         <h2>📞 First Call — 1 July 2025</h2>
         <p>
             Our first call was a little awkward at the beginning,
-            but soon hours passed like minutes.
-            Even after talking all day, it still felt incomplete.
+            but somehow, we both felt comfortable faster than expected.
+            Soon, hours passed like minutes —
+            and even after talking all day, it still felt incomplete,
+            like there was always more left to say.
         </p>
     </div>
 
     <div class="moment">
         <h2>🤍 First Meet — 22 December 2025</h2>
         <p>
+            Meeting you for the first time felt unreal.
             Holding your hand, feeling your touch, hugging you —
             everything felt right, warm, and safe.
-            A memory I’ll always carry with me.
+            That day didn’t feel like a beginning…
+            it felt like a memory I’d want to relive forever.
+        </p>
+    </div>
+
+     <div class="moment">
+        <h2>🤍 The Moment We Hugged</h2>
+        <p>
+            That moment felt unreal.
+            As if the whole world paused just for us.
+            Everything went quiet — no noise, no rush —
+            just peace, warmth, and a feeling of calm I had never felt before.
         </p>
     </div>
 
@@ -124,8 +139,15 @@
         <button onclick="toggleMessage()">Click to read my feelings 💌</button>
 
         <div id="hiddenMessage" class="hidden-box">
-            From the moment you came into my life, you felt like home—a place where my heart felt safe,
-            understood, and at peace. Through every fight, every hug, every tear, and every smile—
+            From the moment you came into my life, you felt like home—a place where my heart felt safe, understood, and at peace. I may not always say how much you mean to me, but you matter more to me than you’ll ever know. From the day we met, so much has happened between us—we’ve argued, we’ve laughed, we’ve fallen, and we’ve loved. We’ve had misunderstandings, moments of silence, and days when things felt heavy… yet somehow, my heart always chose you.<br><br>
+
+            Whenever we fight and things get rough, I miss you more than anything. That’s when I realize how deeply important you are to me. I can’t replace you, and I can’t forget you—because you’re not just someone in my life, you’re my person. ❤️<br><br>
+
+            Even if I have many people around me, you’re the one I never want to lose. Being with you, spending time together, sharing even the smallest moments—it all makes me genuinely happy. Your smile means more to me than you think, and if you’re ever sad, I’ll always try my best to make you smile again 😊<br><br>
+
+            Life won’t always be easy. There will be ups and downs, good days and bad days—but no matter what comes our way, I want you to know one thing: I’m always with you. I won’t leave. I won’t give up. What I feel for you is real, pure, and deeply true.<br><br>
+
+            I don’t need anyone else. Through every fight, every hug, every tear, and every smile—
             I just need you. Always. 💕✨
         </div>
     </div>
@@ -133,7 +155,7 @@
     <!-- Slideshow -->
     <div class="slideshow">
         <h2>Our Moments 📸</h2>
-        <img id="photoBox" src="static/images/photo1.jpg" class="photo">
+        <img id="photoBox" src="photo1.jpg" class="photo">
         <div class="caption" id="caption"></div>
         <br><br>
         <button onclick="nextPhoto()">Next Photo ➡️</button>
@@ -148,11 +170,11 @@
 
 <script>
     const photos = [
-        { src: "static/images/photo1.jpg", cap: "The moment everything changed ❤️" },
-        { src: "static/images/photo2.jpg", cap: "Your smile makes everything better 🌸" },
-        { src: "static/images/photo3.jpg", cap: "I see my forever in you ✨" },
-        { src: "static/images/photo4.jpg", cap: "Holding you feels like home 🫂" },
-        { src: "static/images/photo5.jpg", cap: "Always with you 💕" }
+        { src: "photo1.jpg", cap: "The moment everything changed ❤️" },
+        { src: "photo2.jpg", cap: "Your smile makes everything better 🌸" },
+        { src: "photo3.jpg", cap: "I see my forever in you ✨" },
+        { src: "photo4.jpg", cap: "Holding you feels like home 🫂" },
+        { src: "photo5.jpg", cap: "Always with you 💕" }
     ];
 
     let index = 0;
@@ -175,7 +197,7 @@
 
     document.addEventListener("click", function () {
         const music = document.getElementById("bgMusic");
-        if (music && music.paused) {
+        if (music.paused) {
             music.volume = 0.4;
             music.play();
         }
