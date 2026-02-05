@@ -179,10 +179,15 @@
 
     let index = 0;
 
-    window.onload = function () {
-        document.getElementById("photoBox").src = photos[0].src;
-        document.getElementById("caption").innerText = photos[0].cap;
-    };
+    <script>
+    // force first photo + caption
+    const photoBox = document.getElementById("photoBox");
+    const captionBox = document.getElementById("caption");
+
+    photoBox.src = photos[0].src;
+    captionBox.innerText = photos[0].cap;
+</script>
+
 
     function nextPhoto() {
         index = (index + 1) % photos.length;
@@ -206,3 +211,4 @@
 
 </body>
 </html>
+
