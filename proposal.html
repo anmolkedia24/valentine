@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One Last Question 💖</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.25);
+            padding: 45px 35px;
+            border-radius: 30px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 30px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .yes {
+            background: white;
+            color: #ff4f7a;
+        }
+
+        .no {
+            background: #ff4f7a;
+            color: white;
+            position: absolute;
+        }
+
+        .final {
+            display: none;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="static/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+    <!-- QUESTION PART -->
+    <div id="questionPart">
+        <h1>Will you be my Valentine? 💖</h1>
+
+        <p>
+            After every conversation,<br>
+            every memory,<br>
+            every smile we shared…
+        </p>
+
+        <p>
+            there’s just one thing<br>
+            my heart wants to ask you.
+        </p>
+
+        <div class="buttons">
+            <button class="yes" onclick="yesClicked()">YES 💖</button>
+            <button class="no" id="noBtn" onmouseover="moveNo()">NO 🙃</button>
+        </div>
+    </div>
+
+    <!-- FINAL MESSAGE -->
+    <div class="final" id="finalMsg">
+        <p>💞💖✨</p>
+
+        <p><b>I knew it 😌</b></p>
+
+        <p>
+            Thank you for choosing me.<br>
+            Just like I choose you—every single day.
+        </p>
+
+        <p>
+            This isn’t just a Valentine.<br>
+            It’s a promise.
+        </p>
+
+        <p>
+            Through every smile,<br>
+            every fight,<br>
+            every hug,<br>
+            and every quiet moment…
+        </p>
+
+        <p style="font-weight:700; font-size:16px;">
+            I choose you. Always. 💍❤️
+        </p>
+    </div>
+
+</div>
+
+<script>
+    function moveNo() {
+        const btn = document.getElementById("noBtn");
+        btn.style.left = Math.random() * 240 + "px";
+        btn.style.top = Math.random() * 180 + "px";
+    }
+
+    function yesClicked() {
+        document.getElementById("questionPart").style.display = "none";
+        document.getElementById("finalMsg").style.display = "block";
+    }
+
+    // Start background music on first click
+    document.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        if (music && music.paused) {
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+</script>
+
+</body>
+</html>

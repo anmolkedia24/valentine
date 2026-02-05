@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How Well Do You Know Me? 💕</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.25);
+            padding: 35px;
+            border-radius: 25px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: #ff4f7a;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .reaction {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="static/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>How Well Do You Know Me? 😌</h1>
+
+    <div id="quizBox">
+        <div class="question" id="question">
+            What makes me happiest?
+        </div>
+
+        <button onclick="answer()">Seeing you smile 💖</button>
+        <button onclick="answer()">Talking to you anytime</button>
+        <button onclick="answer()">Being with you</button>
+        <button onclick="answer()">Everything</button>
+    </div>
+
+    <div class="reaction" id="reaction"></div>
+</div>
+
+<script>
+    const questions = [
+        {
+            q: "What makes me happiest?",
+            options: [
+                "Seeing you smile 💖",
+                "Talking to you anytime",
+                "Being with you",
+                "Everything"
+            ]
+        },
+        {
+            q: "What do I love most about you?",
+            options: [
+                "Your smile 😊",
+                "Your care and patience",
+                "Everything about you",
+                "Your presence"
+            ]
+        },
+        {
+            q: "What do I miss the most?",
+            options: [
+                "Your hugs 🤍",
+                "Your voice",
+                "Your presence",
+                "My Babygirl"
+            ]
+        },
+        {
+            q: "When things get tough, what do I do?",
+            options: [
+                "Overthink a little 😅",
+                "Miss you a lot",
+                "Still choose you",
+                "Everything"
+            ]
+        },
+        {
+            q: "What do I choose every single day?",
+            options: [
+                "You 💕",
+                "Us",
+                "A future with you",
+                "You & Us forever"
+            ]
+        }
+    ];
+
+    let index = 0;
+
+    function answer() {
+        document.getElementById("reaction").innerText =
+            "That sounds like us 😌";
+
+        setTimeout(() => {
+            index++;
+
+            if (index < questions.length) {
+                document.getElementById("question").innerText =
+                    questions[index].q;
+
+                const buttons = document.querySelectorAll("#quizBox button");
+                buttons.forEach((btn, i) => {
+                    btn.innerText = questions[index].options[i];
+                });
+
+                document.getElementById("reaction").innerText = "";
+            } else {
+                document.getElementById("quizBox").innerHTML = `
+                    <div class="question">
+                        You know me pretty well 💕<br><br>
+                        Ready for the last question? 😏
+                    </div>
+                    <button onclick="location.href='proposal.html'">
+                        Continue 💖
+                    </button>
+                `;
+            }
+        }, 600);
+    }
+
+    // Start music on first click
+    document.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        if (music && music.paused) {
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+</script>
+
+</body>
+</html>

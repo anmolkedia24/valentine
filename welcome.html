@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome 💕</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.25);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            width: 340px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: white;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            background: white;
+            color: #ff4f7a;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="static/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>Hi My Babygirl 💕</h1>
+
+    <p style="line-height:1.8; text-align:center;">
+        <span style="font-weight:600;">From 29 June 2025</span><br>
+        <span style="font-weight:600;">to the day we met on 22 December 2025</span>,
+        <br><br>
+        I didn’t even realize when you slowly became<br>
+        my favorite part of every day.
+    </p>
+
+    <p style="margin-top:15px; line-height:1.7;">
+        I never said it much, but you mattered more than you knew.
+        <br><br>
+        And this…<br>
+        this is just the beginning of our story ✨
+    </p>
+
+    <!-- Static link -->
+    <button onclick="location.href='memories.html'">
+        Start Our Story 💖
+    </button>
+</div>
+
+<script>
+    // Start background music on first click
+    document.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        if (music && music.paused) {
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Story 💕</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .moment {
+            background: rgba(255,255,255,0.18);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        .moment h2 {
+            margin-top: 0;
+        }
+
+        .hidden-box {
+            display: none;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: #ff4f7a;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .slideshow {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .photo {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="static/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>Our Story 💖</h1>
+
+    <div class="moment">
+        <h2>💬 First Chat — 29 June 2025</h2>
+        <p>
+            What started as an online conversation slowly became something I never expected.
+            From texts to voice calls, from video calls to late-night talks —
+            those moments quietly turned into the most important part of my life.
+            Somewhere along the way, <b>you became my everyday.</b>
+        </p>
+    </div>
+
+    <div class="moment">
+        <h2>📞 First Call — 1 July 2025</h2>
+        <p>
+            Our first call was a little awkward at the beginning,
+            but soon hours passed like minutes.
+            Even after talking all day, it still felt incomplete.
+        </p>
+    </div>
+
+    <div class="moment">
+        <h2>🤍 First Meet — 22 December 2025</h2>
+        <p>
+            Holding your hand, feeling your touch, hugging you —
+            everything felt right, warm, and safe.
+            A memory I’ll always carry with me.
+        </p>
+    </div>
+
+    <div class="moment">
+        <h2>✨ Today</h2>
+        <p>
+            Still choosing you.<br>
+            And I know I always will.
+        </p>
+    </div>
+
+    <!-- Hidden Message -->
+    <div class="moment">
+        <h2>🔐 A Little Truth</h2>
+        <button onclick="toggleMessage()">Click to read my feelings 💌</button>
+
+        <div id="hiddenMessage" class="hidden-box">
+            From the moment you came into my life, you felt like home—a place where my heart felt safe,
+            understood, and at peace. Through every fight, every hug, every tear, and every smile—
+            I just need you. Always. 💕✨
+        </div>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow">
+        <h2>Our Moments 📸</h2>
+        <img id="photoBox" src="static/images/photo1.jpg" class="photo">
+        <div class="caption" id="caption"></div>
+        <br><br>
+        <button onclick="nextPhoto()">Next Photo ➡️</button>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+        <button onclick="location.href='quiz.html'">
+            Continue Our Story 💕
+        </button>
+    </div>
+</div>
+
+<script>
+    const photos = [
+        { src: "static/images/photo1.jpg", cap: "The moment everything changed ❤️" },
+        { src: "static/images/photo2.jpg", cap: "Your smile makes everything better 🌸" },
+        { src: "static/images/photo3.jpg", cap: "I see my forever in you ✨" },
+        { src: "static/images/photo4.jpg", cap: "Holding you feels like home 🫂" },
+        { src: "static/images/photo5.jpg", cap: "Always with you 💕" }
+    ];
+
+    let index = 0;
+
+    window.onload = function () {
+        document.getElementById("photoBox").src = photos[0].src;
+        document.getElementById("caption").innerText = photos[0].cap;
+    };
+
+    function nextPhoto() {
+        index = (index + 1) % photos.length;
+        document.getElementById("photoBox").src = photos[index].src;
+        document.getElementById("caption").innerText = photos[index].cap;
+    }
+
+    function toggleMessage() {
+        const msg = document.getElementById("hiddenMessage");
+        msg.style.display = msg.style.display === "block" ? "none" : "block";
+    }
+
+    document.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        if (music && music.paused) {
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+</script>
+
+</body>
+</html>

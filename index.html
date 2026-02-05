@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Only One Special Date 💖</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff8fa3, #ffb6c1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            width: 320px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: white;
+            font-weight: 800;
+        }
+
+        p {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: none;
+            background: white;
+            color: #ff4f7a;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .error {
+            margin-top: 15px;
+            font-weight: 600;
+            color: white;
+            background: rgba(255,255,255,0.25);
+            padding: 10px 15px;
+            border-radius: 12px;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="static/music/bg.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>Only One Special Date 💖</h1>
+    <p>can unlock what I’ve kept just for you</p>
+
+    <!-- Date Input -->
+    <input type="date" id="dateInput" required>
+    <button onclick="checkDate()">Unlock 💖</button>
+
+    <!-- Error Message -->
+    <div class="error" id="errorMsg">
+        That day is special for us 💗 Try again.
+    </div>
+</div>
+
+<script>
+    /* Background music start on first click */
+    document.addEventListener("click", function () {
+        const music = document.getElementById("bgMusic");
+        if (music && music.paused) {
+            music.volume = 0.4;
+            music.play();
+        }
+    }, { once: true });
+
+    /* Date unlock logic */
+    function checkDate() {
+        const selected = document.getElementById("dateInput").value;
+        const error = document.getElementById("errorMsg");
+
+        if (selected === "2025-12-22") {
+            window.location.href = "welcome.html";
+        } else {
+            error.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
