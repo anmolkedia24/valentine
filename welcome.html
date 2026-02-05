@@ -51,7 +51,7 @@
 
 <!-- Background Music -->
 <audio id="bgMusic" loop>
-    <source src="static/music/bg.mp3" type="audio/mpeg">
+    <source src="bg.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
@@ -59,7 +59,7 @@
 
     <p style="line-height:1.8; text-align:center;">
         <span style="font-weight:600;">From 29 June 2025</span><br>
-        <span style="font-weight:600;">to the day we met on 22 December 2025</span>,
+        <span style="font-weight:600;">to the day we met on 22 December 2025</span>
         <br><br>
         I didn’t even realize when you slowly became<br>
         my favorite part of every day.
@@ -72,17 +72,15 @@
         this is just the beginning of our story ✨
     </p>
 
-    <!-- Static link -->
     <button onclick="location.href='memories.html'">
         Start Our Story 💖
     </button>
 </div>
 
 <script>
-    // Start background music on first click
     document.addEventListener("click", function () {
         const music = document.getElementById("bgMusic");
-        if (music && music.paused) {
+        if (music.paused) {
             music.volume = 0.4;
             music.play();
         }
