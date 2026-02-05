@@ -170,36 +170,34 @@
 
 <script>
     const photos = [
-        { src: "photo1.jpg", cap: "The moment I saw your eyes, something changed inside me. That was the first time I knew—this is what love at first sight feels like. Your eyes still hold my heart the same way.❤️" },
-        { src: "photo2.jpg", cap: "Even with a messy face, even in the simplest moments, you’re still the cutest person in my world. No effort, no filter—just you, and I’m already smiling. 🌸" },
-        { src: "photo3.jpg", cap: "I’ll always look at you like this—with love, with pride, with eyes that never get tired of you. My gaze belongs to you, today and always. ✨" },
-        { src: "photo4.jpg", cap: "I’ll hold you just like this—close to my heart. I won’t let go, I won’t walk away. No matter the situation, I’ll stand right here with you. 🫂" },
-        { src: "photo5.jpg", cap: "No matter what life brings, your Bubu will always be with you—to hold you, to kiss you, and to make you smile. 💕😊" }
+        { src: "photo1.jpg", cap: "The moment I saw your eyes, something changed inside me. That was the first time I knew—this is what love at first sight feels like. Your eyes still hold my heart the same way. ❤️" },
+        { src: "photo2.jpg", cap: "Even with a messy face, even in the simplest moments, you’re still the cutest person in my world. 🌸" },
+        { src: "photo3.jpg", cap: "I’ll always look at you like this—with love, with pride, with eyes that never get tired of you. ✨" },
+        { src: "photo4.jpg", cap: "I’ll hold you just like this—close to my heart. I won’t let go. 🫂" },
+        { src: "photo5.jpg", cap: "No matter what life brings, your Bubu will always be with you. 💕" }
     ];
 
     let index = 0;
 
-    <script>
-    // force first photo + caption
+    // ✅ force first photo + caption
     const photoBox = document.getElementById("photoBox");
     const captionBox = document.getElementById("caption");
 
     photoBox.src = photos[0].src;
     captionBox.innerText = photos[0].cap;
-</script>
-
 
     function nextPhoto() {
         index = (index + 1) % photos.length;
-        document.getElementById("photoBox").src = photos[index].src;
-        document.getElementById("caption").innerText = photos[index].cap;
+        photoBox.src = photos[index].src;
+        captionBox.innerText = photos[index].cap;
     }
 
     function toggleMessage() {
         const msg = document.getElementById("hiddenMessage");
-        msg.style.display = msg.style.display === "block" ? "none" : "block";
+        msg.style.display = (msg.style.display === "block") ? "none" : "block";
     }
 
+    // background music
     document.addEventListener("click", function () {
         const music = document.getElementById("bgMusic");
         if (music.paused) {
@@ -209,6 +207,8 @@
     }, { once: true });
 </script>
 
+
 </body>
 </html>
+
 
